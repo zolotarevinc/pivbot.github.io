@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #8e44ad, #f39c12, #e74c3c);
+    background-size: 300% 300%;
+    animation: gradientBG 15s ease infinite;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.balance {
+    margin-top: 20px;
+    font-size: 24px;
+    color: white;
+}
+
+.coin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.coin {
+    width: 30%;
+    max-width: 150px;
+    min-width: 100px;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform 0.1s;
+}
+
+.coin:active {
+    transform: scale(0.9);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.nav-button {
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-button:active {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.coin-animation {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    pointer-events: none;
+    animation: fall 1s forwards;
+}
+
+@keyframes fall {
+    0% { top: -50px; }
+    100% { top: 100vh; }
+}
+
+.coin:focus {
+    outline: none;
+}
+
